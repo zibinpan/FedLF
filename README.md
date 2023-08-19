@@ -24,7 +24,7 @@ All parameters can be seen in `./gfedplat/main.py`.
 Enjoy yourself!
 
 Paper Hash code:
-29e64b0b81f4ef4d77ddafccaec5adf9
+52ef794128f3a631515b4ccbad14fcd9
 
 Appendix Hash code:
-0d41beb017af3dc2eef8550b32adc1c1
+18371cbe7219e0f70312decdc652ebe2
