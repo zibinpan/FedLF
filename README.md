@@ -1,6 +1,6 @@
 # Code of the paper
 
-Thank you for taking the time to review this code. The code can be run directly in Windows, and all experiments can be replicated by running the code. In the event that our paper is accepted for publication, we plan to release all of our codes as open source. However, for safety concerns, we have encrypted some of the code for review.
+The code can be run directly in Windows, and all experiments can be replicated by running the code. In the event that our paper is accepted for publication, we plan to release all of our codes as open source. However, for safety concerns, we have encrypted some of the code for review.
 
 ## Requirements
 
@@ -22,9 +22,3 @@ python run.py --seed 1 --device 0 --module CNN --algorithm FedAvg --dataloader D
 All parameters can be seen in `./gfedplat/main.py`.
 
 Enjoy yourself!
-
-Paper Hash code:
-52ef794128f3a631515b4ccbad14fcd9
-
-Appendix Hash code:
-18371cbe7219e0f70312decdc652ebe2
