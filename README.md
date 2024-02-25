@@ -1,4 +1,9 @@
-# Code of the paper
+# Introduction
+This repository is the implementation of the paper FedLF: Layer-Wise Fair Federated Learning (accepted by AAAI 2024).
+
+This work presents a promising way to handle FL non-iid problem that the global model easily has imbalanced performance that favors part of clients while performing poorly on others. The proposed FedLF can significantly increase the average model performance and reduce the performance variance across clients.
+
+## Code of the paper
 
 The code can be run directly in Windows, and all experiments can be replicated by running the code. In the event that our paper is accepted for publication, we plan to release all of our codes as open source. However, for safety concerns, we have encrypted some of the code for review.
 
