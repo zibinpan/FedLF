@@ -5,7 +5,8 @@ This work presents a promising way to handle FL non-iid problem that the global 
 
 **What Makes Federated Learning Unfair?**
 ![image](https://github.com/zibinpan/FedLF/assets/79980563/559b2963-60df-47c5-89ce-3212ed2bdf70)
-Challenges of computing a fair update direction in FL:
+
+**Challenges of computing a fair update direction in FL:**
 1. Model-level gradient conflict.
 2. Improvement bias.
 ![image](https://github.com/zibinpan/FedLF/assets/79980563/f650a5a1-f71a-493d-938c-4c70788e0a0f)
