@@ -1,7 +1,19 @@
-# Introduction
+![image](https://github.com/zibinpan/FedLF/assets/79980563/57207813-903f-456c-8d6d-eda786211686)# Introduction
 This repository is the implementation of the paper FedLF: Layer-Wise Fair Federated Learning (accepted by AAAI 2024).
 
 This work presents a promising way to handle FL non-iid problem that the global model easily has imbalanced performance that favors part of clients while performing poorly on others. The proposed FedLF can significantly increase the average model performance and reduce the performance variance across clients.
+
+**What Makes Federated Learning Unfair?**
+![image](https://github.com/zibinpan/FedLF/assets/79980563/559b2963-60df-47c5-89ce-3212ed2bdf70)
+Challenges of computing a fair update direction in FL:
+1. Model-level gradient conflict.
+2. Improvement bias.
+![image](https://github.com/zibinpan/FedLF/assets/79980563/f650a5a1-f71a-493d-938c-4c70788e0a0f)
+3. Layer-level gradient conflict.
+![image](https://github.com/zibinpan/FedLF/assets/79980563/088b1789-8ae2-489e-9e64-a701ca390fa5)
+
+**Visualization of unfairness:**
+![image](https://github.com/zibinpan/FedLF/assets/79980563/8df33c21-1011-462b-a539-b600e22b6461)
 
 ## Code of the paper
 
