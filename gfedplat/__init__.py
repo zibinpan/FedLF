@@ -32,6 +32,7 @@ from gfedplat.algorithm.Ditto.Ditto import Ditto
 from gfedplat.algorithm.FedCKA.FedCKA import FedCKA
 from gfedplat.algorithm.DRFL.DRFL import DRFL
 from gfedplat.algorithm.FedProx.FedProx import FedProx
+from gfedplat.algorithm.FedMDFG.FedMDFG import FedMDFG
 from gfedplat.algorithm.FedLF.FedLF import FedLF
 
 
