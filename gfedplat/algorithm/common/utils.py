@@ -171,3 +171,36 @@ def solve_d(Q, g, value, device):
     lam = torch.from_numpy(lam).float().to(device)
     d = lam @ g
     return d
+
+def get_fedmdfg_d(grads, value, add_grads, alpha, fair_guidance_vec, force_active, device):
+    fair_grad = None
+    value_norm = torch.norm(value)
+    norm_values = value / value_norm
+    fair_guidance_vec /= torch.norm(fair_guidance_vec)
+    cos = float(norm_values @ fair_guidance_vec)
+    cos = min(1, cos)
+    cos = max(-1, cos)
+    bias = np.arccos(cos) / np.pi * 180
+    pref_active_flag = (bias > alpha) | force_active
+    norm_vec = torch.norm(grads, dim=1)
+    indices = list(range(len(norm_vec)))
+    grads = norm_vec[indices].reshape(-1, 1) * grads / (norm_vec + 1e-6).reshape(-1, 1)
+    if not pref_active_flag:
+        vec = grads
+        pref_active_flag = 0
+    else:
+        pref_active_flag = 1
+        h_vec = (fair_guidance_vec @ norm_values * norm_values - fair_guidance_vec).reshape(1, -1)
+        h_vec /= torch.norm(h_vec)
+        fair_grad = h_vec @ grads
+        vec = torch.cat((grads, fair_grad))
+    if add_grads is not None:
+        norm_vec = torch.norm(add_grads, dim=1)
+        indices = list(range(len(norm_vec)))
+        random.shuffle(indices)
+        add_grads = norm_vec[indices].reshape(-1, 1) * add_grads / (norm_vec + 1e-6).reshape(-1, 1)
+        vec = torch.vstack([vec, add_grads])
+    sol, _ = setup_qp_and_solve(vec.cpu().detach().numpy())
+    sol = torch.from_numpy(sol).float().to(device)
+    d = sol @ vec
+    return d, vec, pref_active_flag, fair_grad
